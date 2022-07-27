@@ -14,6 +14,7 @@ const betterJapanese = {
         replaceBuildings: true,
         replaceCSS: true,
         replaceNews: true,
+        replaceOthers: true,
         showSpoilerAlert: true,
         beautifyAscendNumber: true,
         numberJP: true,
@@ -600,6 +601,7 @@ const betterJapanese = {
             betterJapanese.writeButton('toggleBeautifyAscendNumber', 'beautifyAscendNumber', 'ヘブンリーチップスの短縮表記', '画面右上および転生時のヘブンリーチップス入手数を短縮表記にし、改行しないようにします。', null, 'dummySettingJP')
             betterJapanese.writeButton('toggleReplaceCSSButton', 'replaceCSS', 'CSSの変更', 'フレーバーテキストの囲み文字をかぎ括弧に変更します。', null, 'dummySettingJP')
             betterJapanese.writeButton('toggleReplaceNewsButton', 'replaceNews', 'ニュース欄の改善', 'ニュース欄の挙動および翻訳を置き換えます。', null, 'dummySettingJP')
+            betterJapanese.writeButton('toggleReplaceOthersButton', 'replaceOthers', 'そのほか微小な改善', 'ツールチップなどの翻訳を置き換えます。', null, 'dummySettingJP')
         }
 
         this.writeButton('toggleBJPButton', 'replaceJP', '日本語訳の改善', '公式の翻訳を非公式日本語訳に置き換えます。また、公式では翻訳されていない部分も翻訳されます。変更は再起動後に適用されます。')
