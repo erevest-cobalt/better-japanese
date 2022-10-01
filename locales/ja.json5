@@ -3758,7 +3758,7 @@
 	"Loan #%1": "第%1種ローン",
 	"By taking this loan, you will get %1 CpS for the next %2.": "このローンを組むことで、この先 %2 の間はCpSが %1 されます。",
 	"However, you will get %1 CpS for the next %2 after that.": "ただし、その後 %2 の間はCpSが %1 されます。",
-	"You must also pay an immediate downpayment of %1 (<b>%2%</b> of your current bank).": "また %1(CpSの <b>%2%</b>) の頭クッキーを現クッキーで払わなければなりません。",
+	"You must also pay an immediate downpayment of %1 (<b>%2%</b> of your current bank).": "また %1(貯蔵量の <b>%2%</b>) の頭クッキーを現クッキーで払わなければなりません。",
 	"Loan over": "ローン終了",
 	"Your loan has expired, and you must now repay the interest.": "ローンの期間が満了したため、利子を返済しなければなりません。",
 	"Line style": "ライン様式",
