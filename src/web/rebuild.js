@@ -77,21 +77,7 @@ function rebuildLocalization() {
     }
     
     // ドラゴンオーラ名、概要
-    let dragonAuraDescsEN = []
-    for (let obj of funcInitString.match(/Game\.dragonAuras=\{.+?\};/)[0].matchAll(/desc:loc\((.+?)\)/g)) {
-        let res = null
-        if (obj[1][0] == '"' && obj[1][obj[1].length - 1] == '"') {
-            dragonAuraDescsEN.push(loc(obj[1].substring(1, obj[1].length - 1)))
-        } else if ((res = obj[1].match(/"(.+?)",(\d+?)/)) != null) {
-            dragonAuraDescsEN.push(loc(res[1], Number(res[2])))
-        } else if ((res = obj[1].match(/"(.+?)",\[(\d+?),(\d+?)]/)) != null) {
-            dragonAuraDescsEN.push(loc(res[1], [Number(res[2]), Number(res[3])]))
-        }
-    }
-    for (let dl in Game.dragonAuras) {
-        Game.dragonAuras[dl].dname = loc(Game.dragonAuras[dl].name)
-        Game.dragonAuras[dl].desc = loc(dragonAuraDescsEN[dl])
-    }
+    Function(funcInitString.match(/Game\.dragonAuras=\{.+?\};/)[0].replace(/name:'(.*?)',/g, 'name:\'$1\',dname:loc(\'$1\'),'))()
     
     // ドラゴンレベル概要
     let dragonLevelNamesEN = []
