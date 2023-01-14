@@ -526,6 +526,9 @@ async function rebuildLocalization() {
     'Cookie Clickerは主に広告によって支えられています。<br>このサイトをブロックしないよう考えていただくか<a href="https://www.patreon.com/dashnet" target="_blank">Patreon</a>を確認してください!'
 
     const getNumber = (str) => {
+        const isExp = str.match(/[+-]?\d+(?:\.\d+)?[eE][+-]?\d+/)
+        if (isExp) return isExp[0]
+
         let res = str.match(/(\d+)((?:,\d+)+)?(.\d+)?( \w+)?/)
         let newval
         if (res) {
