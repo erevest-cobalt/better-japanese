@@ -1660,7 +1660,7 @@
 	"You gain <b>more CpS</b> the more milk you have.": "より多くのミルクを持っているほど<b>よりCpSが多く</b>上昇する。",
 	"Milk is <b>%1% more powerful</b>.": "ミルクによる効果が <b>%1%より強力に</b> なる。",
 	"Cookie production multiplier <b>+%1%</b>.": "クッキー生産量が <b>+%1%</b> される。",
-	"Cookie production multiplier <b>+%1% permanently</b>.": "クッキーの生産量が<b>恒久的に +10%</b> される。",
+	"Cookie production multiplier <b>+%1% permanently</b>.": "クッキーの生産量が<b>恒久的に +%1%</b> される。",
 	"Cookie production multiplier <b>+%1% per Santa's levels.</b>": "クッキー生産量が <b>サンタのレベルにつき+%1%</b> される。",
 	"Cookie production multiplier <b>+%1%</b> for every year Cookie Clicker has existed (currently: <b>+%2%</b>).": "CookieClickerが1年続くごとに、クッキーの生産量が <b>+%1%</b> される(現在 : <b>+%2%</b>)。",
 	"Cookie production multiplier <b>+%1%</b> for every building type level %2 or higher.": "クッキー生産量が Lv%2以上 の施設1つにつき <b>+%1%</b> される。",
