@@ -265,7 +265,7 @@ const betterJapanese = {
         }
 
         // 在庫市場のquoteを実装
-        if (betterJapanese.config.replaceMarketQuote) {
+        if (betterJapanese.config.replaceMarketQuote && betterJapanese.isAvailableMinigame('Bank')) {
             while (!Game.Objects['Bank'].hasOwnProperty('minigame')) await new Promise(resolve => setTimeout(resolve, 1000))
             if (!betterJapanese.origins.goodTooltip) betterJapanese.origins.goodTooltip = Game.Objects['Bank'].minigame.goodTooltip
             Game.Objects['Bank'].minigame.goodTooltip = function(id) {
@@ -279,7 +279,7 @@ const betterJapanese = {
         }
 
         // 菜園情報の画像を差し替え
-        if (betterJapanese.config.replaceGardenImage) {
+        if (betterJapanese.config.replaceGardenImage && betterJapanese.isAvailableMinigame('Farm')) {
             while (!Game.Objects['Farm'].hasOwnProperty('minigame')) await new Promise(resolve => setTimeout(resolve, 1000))
             if (!betterJapanese.origins.toolInfoDescFunc) betterJapanese.origins.toolInfoDescFunc = Game.Objects['Farm'].minigame.tools['info'].descFunc
 
