@@ -1114,6 +1114,10 @@ const betterJapanese = {
         return new RegExp(regex, 'g')
     },
 
+    isAvailableMinigame: function(name) {
+        return !!document.getElementById(`minigameScript-${Game.Objects[name].id}`)
+    },
+
     devCheck: function(isDev = false) {
         if (betterJapanese.initialized) return
 
