@@ -346,12 +346,14 @@ const betterJapanese = {
                         let options = logResult[i].split('|')
                         let str = options.pop()
                         let isAppItem = false
+                        let stylePosition = -1
                         if (options.length > 0) {
                             if (options.includes('app')) isAppItem = true
+                            if (options.includes('style')) stylePosition = options.indexOf('style') + 1
                         }
                         if ((App && isAppItem) || !isAppItem) {
                             str = str.replaceAll('[Update Log General Names]', choose(loc('[Update Log General Names]')))
-                            logPerUpdate += `<div class="listing">${str}</div>`
+                            logPerUpdate += `<div class="listing"${stylePosition >= 0 && stylePosition < options.length ? `style="${options[stylePosition]}"` : ''}>${str}</div>`
                         }
                     }
                     logUpdates = `${logPerUpdate}</div>${logUpdates}`
@@ -614,6 +616,17 @@ const betterJapanese = {
     injectStats: function() {
         const strLegacyStarted = '<div class="listing"><b>' + loc('Legacy started:') + '</b>'
         l('menu').innerHTML = l('menu').innerHTML.replace(new RegExp(strLegacyStarted + ' (.+?), (.+?)</div>'), strLegacyStarted + ' $1、$2</div>')
+
+        // 統計欄のデバッグ用アップグレードの見出しを翻訳
+        if (!betterJapanese.origins.updateMenu) betterJapanese.origins.updateMenu = Game.UpdateMenu
+        Game.UpdateMenu = function() {
+            betterJapanese.origins.updateMenu()
+            if (Game.onMenu == 'stats') {
+                if (l('statsUpgrades').children[0].children[0].innerHTML == 'Debug') {
+                    l('statsUpgrades').children[0].children[0].innerHTML = loc('Debug')
+                }
+            }
+        }
 
         let target = l('statsGeneral')
         let div = document.createElement('div')
