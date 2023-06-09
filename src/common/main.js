@@ -47,6 +47,7 @@ const betterJapanese = {
     currentIgnoreList: [],
     isRegisteredHook: false,
     isLoadedConfig: false,
+    isShowedUnitChangeNotify: false,
 
     init: function() {
         let versionPath = App ? `file:///${App.mods['BetterJapanese'].dir.replace(/\\/g, '/')}/version.json` : 'https://pages.yukineko.me/better-japanese/version.json'
@@ -571,6 +572,11 @@ const betterJapanese = {
             BeautifyAll()
             Game.RefreshStore()
             Game.upgradesToRebuild = 1
+
+            if (!betterJapanese.isShowedUnitChangeNotify) {
+                Game.Notify('日本語訳改善Mod', '単位の変更を検知しました。<br>変更後の単位を全ての要素に適用するには、再読み込みをしてください<br><a onclick="betterJapanese.reload()">セーブデータを保存して再読み込み</a>')
+                betterJapanese.isShowedUnitChangeNotify = true
+            }
         }
 
         let openSettings = () => {
