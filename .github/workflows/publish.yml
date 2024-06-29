@@ -20,22 +20,24 @@ jobs:
         with:
             fetch-depth: 0
 
+      - uses: pnpm/action-setup@v4
+
       - uses: actions/setup-node@v4
         with:
           node-version: 'lts/*'
-          cache: npm
+          cache: pnpm
 
-      - name: npm ci
-        run: npm ci
+      - name: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: create artifact
-        run: npm run publish
+        run: pnpm run publish
         env:
           TARGET_LOCALE: ja
           BASE_URL: 'https://pages.yukineko.me/better-japanese' # DO NOT put trailing slash
 
       - name: copy common files
-        run: npm run build-web
+        run: pnpm run build-web
 
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
