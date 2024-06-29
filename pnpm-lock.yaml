@@ -5,6 +5,12 @@ settings:
   excludeLinksFromLockfile: false
 
 devDependencies:
+  '@eslint/eslintrc':
+    specifier: ^3.1.0
+    version: 3.1.0
+  '@eslint/js':
+    specifier: ^9.6.0
+    version: 9.6.0
   chalk:
     specifier: ^4
     version: 4.1.2
@@ -23,6 +29,9 @@ devDependencies:
   fs-extra:
     specifier: ^11.2.0
     version: 11.2.0
+  globals:
+    specifier: ^15.6.0
+    version: 15.6.0
   json5:
     specifier: ^2.2.3
     version: 2.2.3
@@ -473,6 +482,11 @@ packages:
 
   /globals@14.0.0:
     resolution: {integrity: sha512-oahGvuMGQlPw/ivIYBjVSrWAfWLBeku5tpPE2fOPLi+WHffIWbuh2tCjhyQhTBPMf5E9jDEH4FOmTYgYwbKwtQ==}
+    engines: {node: '>=18'}
+    dev: true
+
+  /globals@15.6.0:
+    resolution: {integrity: sha512-UzcJi88Hw//CurUIRa9Jxb0vgOCcuD/MNjwmXp633cyaRKkCWACkoqHCtfZv43b1kqXGg/fpOa8bwgacCeXsVg==}
     engines: {node: '>=18'}
     dev: true
 
