@@ -3,6 +3,7 @@
   "version": "1.5.8",
   "description": "",
   "main": "index.js",
+  "packageManager": "pnpm@9.4.0",
   "scripts": {
     "start": "node ./tools/start.js",
     "build": "node ./tools/build-steam.js",
